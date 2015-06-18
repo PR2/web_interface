@@ -1,6 +1,6 @@
 <package>
   <name>ros_apache2</name>
-  <version>1.0.1</version>
+  <version>1.0.0</version>
   <description>ros_apache2</description>
 
   <license>BSD</license>
