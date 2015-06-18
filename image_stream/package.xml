@@ -1,6 +1,6 @@
 <package>
   <name>image_stream</name>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <description>rosweb plugin to serve images as streams (MJPEG, Theora, FLV, etc)</description>
   <maintainer email="dash@clearpathrobotics.com">Devon Ash</maintainer>
 

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <name>web_interface</name>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <description>The web_interface package</description>
 
   <maintainer email="dash@clearpathrobotics.com">Devon Ash</maintainer>
