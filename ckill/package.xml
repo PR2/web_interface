@@ -1,0 +1,13 @@
+<package>
+  <name>ckill</name>
+  <version>1.0.0</version>
+  <description>Cluster kill</description>
+  <maintainer email="dash@clearpathrobotics.com">Devon Ash</maintainer>
+
+  <license>BSD</license>
+
+  <author>Scott Noob Hassan</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+</package>
