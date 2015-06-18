@@ -1,6 +1,6 @@
 <package>
   <name>rosweb</name>
-  <version>1.0.1</version>
+  <version>1.0.2</version>
   <description>rosweb is a temporary package to replace the original rosweb in the ROS
      repository.  It is placed in the sandbox while development is ongoing, so
      we are not gated on ROS stack releases.  When the server is more stable,

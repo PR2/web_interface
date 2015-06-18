@@ -2,8 +2,8 @@
 Changelog for package ros_apache2
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.2 (2015-06-18)
+------------------
 * version inc
 * Changelogs
 * Added rosapache2

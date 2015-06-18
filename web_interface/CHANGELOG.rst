@@ -2,8 +2,8 @@
 Changelog for package web_interface
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.2 (2015-06-18)
+------------------
 * Changelogs
 * Removed ckill dependency
 * Contributors: TheDash

@@ -1,6 +1,6 @@
 <package>
   <name>rosjson</name>
-  <version>1.0.1</version>
+  <version>1.0.2</version>
   <description>rosjson is a Python library for converting ROS messages to JSON
      (JavaScript Object Notation) representation.</description>
   <maintainer email="dash@clearpathrobotics.com">Devon Ash</maintainer>

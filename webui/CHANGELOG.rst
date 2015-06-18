@@ -2,8 +2,8 @@
 Changelog for package webui
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.2 (2015-06-18)
+------------------
 * Changelogs
 * Removed temp
 * Removed ckill dependency
