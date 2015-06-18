@@ -1,0 +1,57 @@
+<package>
+  <name>webui</name>
+  <version>1.0.0</version>
+  <description>A web interface to install and launch applications for the PR2.</description>
+  <maintainer email="hassan@willowgarage.com">Scott Hassan</maintainer>
+
+  <license>BSD</license>
+
+  <url type="website">http://ros.org/wiki/webui</url>
+  <!-- <url type="bugtracker"></url> -->
+
+  <author email="hassan@willowgarage.com">Scott Hassan</author>
+
+  <!-- Dependencies which this package needs to build itself. -->
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <!-- Dependencies needed to compile this package. -->
+  <build_depend>roslib</build_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>rosservice</build_depend>
+  <build_depend>launchman</build_depend>
+  <build_depend>pyclearsilver</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>std_srvs</build_depend>
+  <build_depend>diagnostic_msgs</build_depend>
+  <build_depend>rosweb</build_depend>
+  <build_depend>web_msgs</build_depend>
+
+  <!-- Dependencies needed after this package is compiled. -->
+  <run_depend>roslib</run_depend>
+  <run_depend>rospy</run_depend>
+  <run_depend>rosservice</run_depend>
+  <run_depend>launchman</run_depend>
+  <run_depend>pyclearsilver</run_depend>
+  <run_depend>std_msgs</run_depend>
+  <run_depend>std_srvs</run_depend>
+  <run_depend>diagnostic_msgs</run_depend>
+  <run_depend>rosweb</run_depend>
+  <run_depend>web_msgs</run_depend>
+
+  <!-- Dependencies needed only for running tests. -->
+  <!-- <test_depend>roslib</test_depend> -->
+  <!-- <test_depend>rospy</test_depend> -->
+  <!-- <test_depend>rosservice</test_depend> -->
+  <!-- <test_depend>launchman</test_depend> -->
+  <!-- <test_depend>pyclearsilver</test_depend> -->
+  <!-- <test_depend>std_msgs</test_depend> -->
+  <!-- <test_depend>std_srvs</test_depend> -->
+  <!-- <test_depend>diagnostic_msgs</test_depend> -->
+  <!-- <test_depend>rosweb</test_depend> -->
+  <!-- <test_depend>web_msgs</test_depend> -->
+
+<export>
+    <rosweb plugin="webui.diagnostics"/>
+</export>
+
+</package>
