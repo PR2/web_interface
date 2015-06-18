@@ -21,6 +21,6 @@
   <run_depend>webui</run_depend>
 
   <export>
-    </metapackage>
+    <metapackage/>
   </export>
 </package>
