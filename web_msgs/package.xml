@@ -1,0 +1,20 @@
+<package>
+  <name>web_msgs</name>
+  <version>1.0.0</version>
+  <description>web_msgs</description>
+
+  <license>BSD</license>
+
+  <url type="website">http://ros.org/wiki/web_msgs</url>
+  <!-- <url type="bugtracker"></url> -->
+
+  <!-- Dependencies which this package needs to build itself. -->
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <!-- Dependencies needed to compile this package. -->
+
+  <!-- Dependencies needed after this package is compiled. -->
+
+  <!-- Dependencies needed only for running tests. -->
+
+</package>
