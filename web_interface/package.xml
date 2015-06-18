@@ -10,7 +10,6 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
-  <run_depend>ckill</run_depend>
   <run_depend>image_stream</run_depend>
   <run_depend>pyclearsilver</run_depend>
   <run_depend>ros_apache2</run_depend>
