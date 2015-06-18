@@ -1,0 +1,16 @@
+<package>
+  <name>ros_apache2</name>
+  <version>1.0.0</version>
+  <description>ros_apache2</description>
+
+  <license>BSD</license>
+
+  <maintainer email="dash@clearpathrobotics.com">Devon Ash</maintainer>
+  <author email="dash@clearpathrobotics.com">Devon Ash</author>
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>webui</build_depend>
+
+  <run_depend>webui</run_depend>
+
+</package>
