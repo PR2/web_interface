@@ -1,0 +1,86 @@
+/* let's go global here */
+
+body{
+  background:#000;
+  font:normal 14px/1.7 "Lucida Grande", "Lucida Sans Unicode", Verdana, Arial,sans-serif;
+  color:#fff;
+}
+.container{
+  width:600px;
+  margin:0 auto;
+}
+a{ color:#0066B3; }
+a:hover{text-decoration:none;}
+
+h1,h2,h3,h4{
+  font-family:Georgia,"Times New Roman", serif;
+  font-weight:normal;
+}
+h1{ font-size:35px; color:#000;}
+h2{ font-size:30px; color:#111;}
+h3{ font-size:22px; color:#222;}
+h4{ font-size:18px; }
+
+ul li strong{ color:#7A3B3B; } 
+
+code{
+  font-family:monospace;
+  font-size:11px;
+  display:block;
+  padding:15px;
+  background:#f7f7f7;
+  border:1px solid #eee;
+  margin:20px 0;
+}
+
+
+
+/* survey specific styles */
+
+/* demo 1 */
+#survey{
+  background:#f0f0f0;
+  margin:0;
+  padding:0;
+}
+#survey ul.bar {
+  list-style:none;
+  margin:0;
+  padding:15px 0 0;
+  font:normal 10px/250% Verdana, arial;
+  text-align:center;
+  color:#fff;
+}
+#survey ul.legend{
+  display:inline-block;
+  clear:both;
+  background-color:#444;
+  margin:0;
+  padding:10px 0;
+  font:normal 14px Georgia, "Times New Roman", Times, serif;
+  text-align:center;
+  color:#eee;
+  _height: 1%; /* make ie6 play nice */
+}
+/* clear the legend */
+#survey ul.legend:after{
+  content: "."; 
+  display: block; 
+  height: 0; 
+  clear: both; 
+  visibility: hidden;
+}
+#survey ul.legend{ display:block; }
+#survey ul li{
+  display:inline; /* trick ie6 to not do double margin bug */
+  float:left; /* float will reset to block */
+  margin:0 15px 0;
+  padding:0;
+}
+#survey ul.bar li div, #survey ul.bar li span{ display:block; overflow:hidden; }
+#survey ul.bar li div.no-results{ color:#888; }
+#survey ul.bar li span{
+  height:15px;
+  line-height:100%;
+  color:#888;
+}

@@ -1,0 +1,59 @@
+/* override certain styles for phone display */
+
+#login div {
+  padding: 0 4px; margin: 10px; width: inherit; background: gray;
+}
+
+#bridge_loading {
+  color: #fff;
+  padding: 4px 4px 4px 24px;
+  margin: 0;
+  background: url(images/ajax-loader.gif) #333 no-repeat;
+  background-position: 2 4;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  display: none;
+}
+
+#bridge_offline {
+  background: #111;
+  color: #999;
+  padding: 4px;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  display: none;
+}
+
+#all_apps {
+  min-width: 1px;
+  width: 100%;
+}
+
+#category_list {
+  width: inherit;
+}
+
+#category_list ul {
+  margin: auto;
+}
+
+#category_list li {
+  display: inline;
+}
+
+#category_list li a {
+  display: inline-block;
+  padding: 6px;
+  width: 42%;
+  line-height: 1.5;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+#navigation #right_nav .nav_element, #navigation #right_nav li a {
+  padding-right: 0.1em;
+  padding-left: 0.1em;
+}
+

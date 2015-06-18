@@ -1,0 +1,75 @@
+/* global element styles */
+
+body {
+  background: black;
+  color: #ccc;
+  font-family: Arial, sans-serif;
+}
+
+a:link, a:visited {
+  color: white;
+}
+
+a:hover {
+  color: #26B3F7;
+}
+
+/* ros-specific styles and elements */
+
+#navigation {
+  font-size: 80%;
+  border: none;
+}
+
+#login {
+  text-align: center;
+}
+
+#login div {
+  padding: 20px;
+}
+
+#content {
+  margin: 0 0.4em;
+  border: 1px solid #333;
+  padding: 0.4em;
+  background: #111;
+  background: url(images/ui-bg_loop_25_000000_21x21.png) #808080 repeat;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.rosout {
+  color: black;
+}
+
+/* override jquery theme styles */
+
+.ui-tabs {
+  padding-bottom: 0;
+}
+
+.ui-tabs .ui-tabs-nav li div.nav_element { 
+  float: left; 
+  text-decoration: none; 
+  padding: .5em 1em;
+}
+
+.ui-tabs .ui-tabs-nav li div.nav_element a { 
+  padding: 0; 
+  float: none 
+}
+
+#tabs .ui-widget-header { 
+  background: black;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+}
+
+#login .ui-state-highlight {
+  color: white;
+}
+

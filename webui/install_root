@@ -1,0 +1,17 @@
+#!/bin/bash
+
+source setup.bash
+
+pushd src/webui/mod/webui
+./createdb.py
+./db_webui.py
+popd
+pushd src/webui/auth/
+./createdb.py
+python newuser.py --admin admin admin
+
+popd
+
+chown -R www-data /var/ros/db
+chmod -R a+rwX /var/ros/
+ 

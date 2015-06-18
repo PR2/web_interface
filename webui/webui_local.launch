@@ -1,0 +1,6 @@
+<launch>
+  <machine name="realtime" address="localhost" ros-root="$(env ROS_ROOT)" ros-package-path="$(env ROS_PACKAGE_PATH)" />
+  <node name="rosweb" machine="realtime" pkg="rosweb" type="rosweb.py" respawn="true"/>
+  <node name="launchman" machine="realtime" pkg="launchman" type="launchman.py" respawn="true"/>
+  <node name="users_online" pkg="webui" type="users_online.py" respawn="true"/>
+</launch>

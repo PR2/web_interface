@@ -1,0 +1,10 @@
+cat <<EOF
+export ROS_ROOT=$ROS_ROOT
+export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH
+
+export ROBOT=\`cat /etc/ros/robot\`
+export ROS_MASTER_URI=\`cat /etc/ros/master\`
+export PATH=\$ROS_ROOT/bin:\$PATH
+export PYTHONPATH=\$PYTHONPATH:\$ROS_ROOT/core/roslib/src
+source \$ROS_ROOT/tools/rosbash/rosbash
+EOF

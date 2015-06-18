@@ -1,0 +1,1 @@
+<?cs var:CGI.result ?>

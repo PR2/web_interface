@@ -1,0 +1,58 @@
+#!/bin/sh
+
+if [ `id -u` = 0 ]; then
+    echo "You should not run ros-apache2ctl as root!"
+    exit 1
+fi
+
+if [ -z "${ROS_ROOT}" -o -z "${ROS_PACKAGE_PATH}" ]; then
+    echo "Please make sure you have your ROS_ROOT and ROS_PACKAGE_PATH environment variables set"
+    exit 2
+fi
+
+export HTTPD=/usr/sbin/apache2
+
+export ROS_APACHE2_PATH=`rospack find ros_apache2`
+export ROS_WEBUI_PATH=`rospack find webui`/src/webui/
+
+[ -z ${ROS_APACHE_PORT} ] && export ROS_APACHE_PORT=9090
+[ -z ${ROS_APACHE_ROOT} ] && export ROS_APACHE_ROOT="/tmp/${USER}_ros_apache2"
+mkdir -p ${ROS_APACHE_ROOT}
+
+export APACHE_RUN_USER=${USER}
+export APACHE_RUN_GROUP=${USER}
+
+export APACHE_SERVER_ROOT=${ROS_APACHE2_PATH}/conf
+
+export APACHE_WWW_DIR=${ROS_APACHE2_PATH}/www
+export APACHE_RUN_DIR=${ROS_APACHE_ROOT}/var/run/ros_apache2
+export APACHE_LOCK_DIR=${ROS_APACHE_ROOT}/var/lock/ros_apache2
+export APACHE_LOG_DIR=${ROS_APACHE_ROOT}/var/log/ros_apache2
+export ROS_VAR_DIR=${ROS_APACHE_ROOT}/var/opt/ros/
+
+mkdir -p ${APACHE_RUN_DIR}
+mkdir -p ${APACHE_LOCK_DIR}
+mkdir -p ${APACHE_LOG_DIR}
+mkdir -p ${ROS_VAR_DIR}/db
+
+export APACHE_PID_FILE=${ROS_APACHE_ROOT}/var/run/ros_apache2.pid
+export APACHE_LOCK_FILE=${ROS_APACHE_ROOT}/var/lock/ros_apache2/accept.lock
+
+export ROS_PYTHON_PATH=${ROS_ROOT}/core/roslib/src/
+
+[ -d ${ROS_VAR_DIR}/db/host ] || 
+{
+  ${ROS_WEBUI_PATH}/auth/createdb.py
+  python ${ROS_WEBUI_PATH}/auth/newuser.py --admin admin admin
+}
+
+[ -d ${ROS_VAR_DIR}/db/webui ] || 
+{
+  ${ROS_WEBUI_PATH}/mod/webui/createdb.py
+}
+
+mkdir -p ${APACHE_RUN_DIR}
+install -d -o ${APACHE_RUN_USER} ${APACHE_LOCK_DIR}
+rm -f ${APACHE_RUN_DIR}/*ssl_scache*
+
+$HTTPD -f ${ROS_APACHE2_PATH}/conf/apache2.conf -D FOREGROUND

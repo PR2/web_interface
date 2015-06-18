@@ -1,0 +1,17 @@
+cat <<EOF
+  <Location "/webui/">
+    PythonDebug On 
+    PythonAutoReload On
+
+    #SetEnv PYTHON_RELOADER On
+    SetEnv ROS_ROOT $ROS_ROOT
+    SetEnv ROS_PACKAGE_PATH $ROS_PACKAGE_PATH
+    SetEnv ROS_MASTER_URI http://localhost:11311/ 
+    SetEnv ROS_BOOST_ROOT /opt/ros 
+
+    PythonPath "['$ROS_ROOT/core/roslib/src', '`rospack find webui`/src/webui/'] + sys.path"
+
+    SetHandler python-program
+    PythonHandler startmod
+  </Location>
+EOF

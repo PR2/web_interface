@@ -1,0 +1,4 @@
+string taskid
+string username
+---
+string status

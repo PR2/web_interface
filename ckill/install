@@ -1,0 +1,6 @@
+#!/bin/bash
+
+mkdir -p /etc/ckill
+cp -r whitelist /etc/ckill
+cp -f ckill.py /usr/bin/ckill
+chmod a+x /usr/bin/ckill

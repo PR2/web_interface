@@ -1,0 +1,11 @@
+
+table.sortable { 
+  border-style: solid;
+  text-align: left;
+  vertical-align: top;
+}
+
+tr.grey { 
+  background-color: #dddddd;
+}
+

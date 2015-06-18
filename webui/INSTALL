@@ -1,0 +1,7 @@
+
+/etc/sudoer
+
+%admin ALL=NOPASSWD: /usr/bin/ckill
+%admin ALL=NOPASSWD: /usr/bin/rosreset
+%admin ALL=NOPASSWD: /usr/bin/webui
+

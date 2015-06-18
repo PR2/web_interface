@@ -1,0 +1,37 @@
+<package>
+<description brief="PR2 Web UI">
+A web interface to install and launch applications for the PR2.
+</description>
+<author>Scott Hassan/hassan@willowgarage.com</author>
+<license>BSD</license>
+<review status="experimental" notes=""/>
+<url>http://ros.org/wiki/webui</url>
+  <depend package="roslib"/>
+  <depend package="rospy"/>
+  <depend package="rosservice"/>
+  <depend package="launchman"/>
+  <depend package="pyclearsilver"/>
+  <depend package="std_msgs"/>
+  <depend package="std_srvs"/>
+  <depend package="diagnostic_msgs"/>
+  <depend package="rosweb"/>
+  <depend package="web_msgs"/>
+<!--
+  Removing these runtime dependencies, because users of the
+  webui don't necessarily want to run this specific version of 
+  the Apache server; they might even want to use a different
+  webserver all together.
+
+  <rosdep name="apache2-mpm-prefork"/>
+  <rosdep name="libapache2-mod-python"/>
+-->
+  <rosdep name="python-clearsilver"/>
+
+  <export>
+    <rosweb plugin="webui.diagnostics"/>
+  </export>
+  <platform os="ubuntu" version="9.04"/>
+  <platform os="ubuntu" version="9.10"/>
+  <platform os="ubuntu" version="10.04"/>
+</package>
+

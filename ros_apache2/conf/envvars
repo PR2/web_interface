@@ -1,0 +1,41 @@
+# envvars - default environment variables for apache2ctl
+
+# Since there is no sane way to get the parsed apache2 config in scripts, some
+# settings are defined via environment variables and then used in apache2ctl,
+# /etc/init.d/apache2, /etc/logrotate.d/apache2, etc.
+
+[ -z ${ROS_APACHE_PORT} ] && export ROS_APACHE_PORT=8080
+[ -z ${ROS_APACHE_ROOT} ] && export ROS_APACHE_ROOT="/tmp/${USER}_ros_apache2"
+mkdir -p ${ROS_APACHE_ROOT}
+
+export APACHE_RUN_USER=${USER}
+export APACHE_RUN_GROUP=${USER}
+
+export APACHE_SERVER_ROOT=`${ROS_ROOT}/bin/rospack find ros_apache2`/conf
+export APACHE_RUN_DIR=${ROS_APACHE_ROOT}/var/run/ros_apache2
+export APACHE_LOCK_DIR=${ROS_APACHE_ROOT}/var/lock/ros_apache2
+export APACHE_LOG_DIR=${ROS_APACHE_ROOT}/var/log/ros_apache2
+export ROS_VAR_DIR=${ROS_APACHE_ROOT}/var/opt/ros/
+mkdir -p ${APACHE_RUN_DIR}
+mkdir -p ${APACHE_LOCK_DIR}
+mkdir -p ${APACHE_LOG_DIR}
+mkdir -p ${ROS_VAR_DIR}/db
+
+export APACHE_PID_FILE=${ROS_APACHE_ROOT}/var/run/ros_apache2.pid
+export APACHE_LOCK_FILE=${ROS_APACHE_ROOT}/var/lock/ros_apache2/accept.lock
+
+export ROS_PYTHON_PATH=${ROS_ROOT}/core/roslib/src/
+export ROS_WEBUI_PATH=`${ROS_ROOT}/bin/rospack find webui`/src/webui/
+
+[ -d ${ROS_VAR_DIR}/db/host ] || 
+{
+  ${ROS_WEBUI_PATH}/auth/createdb.py
+  python ${ROS_WEBUI_PATH}/auth/newuser.py --admin admin admin
+}
+
+[ -d ${ROS_VAR_DIR}/db/webui ] || 
+{
+  ${ROS_WEBUI_PATH}/mod/webui/createdb.py
+}
+
+

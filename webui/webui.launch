@@ -1,0 +1,7 @@
+<launch>
+  <node name="ros_apache2" pkg="ros_apache2" type="ros_apache2" respawn="true"/>
+  <node name="rosweb" pkg="rosweb" type="rosweb.py" respawn="true"/>
+  <node name="launchman" pkg="launchman" type="launchman.py" respawn="true"/>
+  <node name="users_online" pkg="webui" type="users_online.py" respawn="true"/>
+</launch>
+

@@ -1,0 +1,59 @@
+#!/bin/bash
+### BEGIN INIT INFO
+# Provides:          webui
+# Required-Start:    $local_fs $remote_fs $network $syslog
+# Required-Stop:     $local_fs $remote_fs $network $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Start/stop texas init
+### END INIT INFO
+#
+
+
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+
+. /lib/lsb/init-functions
+
+PROGNAME=webui
+
+RUN_USER=`cat /etc/ros/user`
+LOGFILE=/var/log/ros/webui.log
+PIDFILE=/var/run/ros/webui.pid
+
+mkdir -p /var/run/ros/
+chown -R $RUN_USER /var/run/ros/
+
+mkdir -p /var/log/ros/
+chown -R $RUN_USER /var/log/ros/
+
+case $1 in
+        start)
+            log_daemon_msg "Starting $PROGNAME daemon"
+
+            echo "starting $PROGNAME daemon" >>$LOGFILE
+            date >>$LOGFILE
+            echo "-------------------------" >>$LOGFILE
+
+            if [ -s $PIDFILE ] && kill -0 $(cat $PIDFILE) 2>/dev/null; then
+                log_progress_msg "apparently already running"
+                log_end_msg 0
+                exit 0
+            fi
+#	    su $RUN_USER -c "source /etc/ros/setup.bash; roslaunch webui webui.launch 2>&1 >>$LOGFILE" &
+	    su $RUN_USER -s /bin/bash -c "source /etc/ros/setup.bash; roslaunch --pid $PIDFILE webui webui.launch 2>&1 >>$LOGFILE" &
+	    ;;
+        stop)
+                log_daemon_msg "Stopping $PROGNAME"
+                if [ -s $PIDFILE ]; then
+                  #pkill -P `cat $PIDFILE`
+                  kill `cat $PIDFILE`
+                fi
+                log_end_msg $?
+                rm -f $PIDFILE
+                ;;
+        *)
+                echo "Usage: $0 {start|stop}"
+                exit 2
+                ;;
+esac
+

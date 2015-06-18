@@ -1,0 +1,3 @@
+# ckill will kill any process with the following strings in them,
+# unless they appear in the specified whitelist
+/ros
