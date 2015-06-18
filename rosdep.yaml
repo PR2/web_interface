@@ -1,8 +1,0 @@
-apache2-mpm-prefork:
-  ubuntu: apache2-mpm-prefork
-libapache2-mod-python:
-  ubuntu: libapache2-mod-python
-python-clearsilver:
-  ubuntu: python-clearsilver
-  debian: python-clearsilver
-  centos: python-clearsilver
