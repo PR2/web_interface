@@ -1,0 +1,33 @@
+<package>
+  <name>rosweb</name>
+  <version>1.0.0</version>
+  <description>rosweb is a temporary package to replace the original rosweb in the ROS
+     repository.  It is placed in the sandbox while development is ongoing, so
+     we are not gated on ROS stack releases.  When the server is more stable,
+     it will be moved to the ROS repository and replace the old rosweb.</description>
+
+  <license>BSD</license>
+
+  <maintainer email="dash@clearpathrobotics.com">Devon Ash</maintainer>
+
+  <url type="website">http://ros.org/wiki/rosweb</url>
+
+  <author>Scott Noob Hassan</author>
+  <author>Rob Wheeler</author>
+  <author>Nate Koenig</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>roslib</build_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>rosservice</build_depend>
+  <build_depend>rosjson</build_depend>
+  <build_depend>std_msgs</build_depend>
+
+  <run_depend>roslib</run_depend>
+  <run_depend>rospy</run_depend>
+  <run_depend>rosservice</run_depend>
+  <run_depend>rosjson</run_depend>
+  <run_depend>std_msgs</run_depend>
+
+</package>
